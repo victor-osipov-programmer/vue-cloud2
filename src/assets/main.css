@@ -1,0 +1,22 @@
+@import './base.css';
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+:root {
+    --primary-color: rgb(228, 164, 69);
+    --red-color: rgb(228, 119, 69);
+}
+
+.delete, .back {
+    background-color: var(--red-color) !important;
+}
+
+.list-files, .edit-file, .rights-page, .list-files {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100dvh;
+}
