@@ -1,7 +1,7 @@
 <template>
     <div class="app-file">
         <div class="text">
-            <div class="id">{{ id }}</div>
+            <div v-if="id" class="id">{{ id }}</div>
             <div class="name">{{ name }}</div>
         </div>
         

@@ -1,5 +1,10 @@
 <template>
   <div class="list-files">
+    <div class="buttons">
+        <AppButton @click="uploadFiles">Загрузка файлов</AppButton>
+        <AppButton @click="sharedFiles">Общие файлы</AppButton>
+    </div>
+
     <div class="files">
         <AppFile
             v-for="file in user.files"
@@ -13,9 +18,7 @@
         </AppFile>
     </div>
 
-    <div class="buttons">
-        <AppButton @click="uploadFiles">Загрузка файлов</AppButton>
-    </div>
+   
   </div>
 </template>
 
@@ -31,6 +34,10 @@ import { useRouter } from "vue-router";
 const router = useRouter()
 const user = useUserStore();
 // const files = ref([]);
+
+function sharedFiles() {
+    router.push('/shared-files')
+}
 
 function uploadFiles() {
     router.push('/upload-files')
@@ -73,12 +80,10 @@ async function downloadFile(id, name) {
 </script>
 
 <style lang="scss" scoped>
-.files {
-    margin-bottom: 3rem;
-}
-
 .buttons {
     display: flex;
     justify-content: center;
+    margin-block: 3rem;
+    gap: 1rem;
 }
 </style>
